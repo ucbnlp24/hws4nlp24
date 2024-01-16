@@ -1,7 +1,11 @@
 """
-===================
-EXAMPLE RESULT.JSON 
-===================
+Every test for the homework assignments should be in this script.
+This script will output a `result.json` in `autograder/results/`
+which is crucial for gradescope assign grades for this assignment.
+
+=====================
+EXAMPLE `result.json` 
+=====================
 
 { "score": 44.0, // optional, but required if not on each test case below. Overrides total of tests if specified.
   "execution_time": 136, // optional, seconds
@@ -40,31 +44,34 @@ EXAMPLE RESULT.JSON
 
 import json
 
+
+tests = [{
+    "name": "Test 1",
+    "score": 8.51,
+    "max_score": 9,
+    "output": "Test Case Test 1 Passed"
+},
+{
+    "name": "Test 2",
+    "score": 16.51,
+    "max_score": 17,
+    "output": "Test Case Test 2 Passed"
+},
+{
+    "name": "Test 3",
+    "score": 17.19,
+    "max_score": 19,
+    "output": "Test Case Test 3 Passed"
+}]
+
 results = {
-    "score": 42.21,
     "output": "Your submission has been graded",
-    "tests": [
-        {
-            "name": "Test 1",
-            "score": 8.51,
-            "max_score": 9,
-            "output": "Test Case Test 1 Passed"
-        },
-        {
-            "name": "Test 2",
-            "score": 16.51,
-            "max_score": 17,
-            "output": "Test Case Test 2 Passed"
-        },
-        {
-            "name": "Test 3",
-            "score": 17.19,
-            "max_score": 19,
-            "output": "Test Case Test 3 Passed"
-        }
-    ]
+    "tests": tests
 }
 
+# ==========
+# FILE CHECK
+# ==========
 
 with open('/autograder/results/results.json', 'w') as file:
     json.dump(results, file)
