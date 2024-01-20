@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Navigate to the directory where student submissions are located
-# cd /autograder/submission
-
-# Execute tests and generate results
-python3 /autograder/source/run_tests.py
